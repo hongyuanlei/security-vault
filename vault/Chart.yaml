@@ -8,4 +8,4 @@ appVersion: "1.19.0"
 dependencies:
   - name: vault
     version: 0.30.0
-    repository: "https://grafana.github.io/helm-charts"
+    repository: "https://helm.releases.hashicorp.com"
