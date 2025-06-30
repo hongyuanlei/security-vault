@@ -5,4 +5,4 @@ vault:
       replicas: 3
       raft:
         enabled: true
-    affinity: {}
+    affinity: ""
