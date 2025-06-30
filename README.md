@@ -37,8 +37,6 @@ Vault needs to be unsealed to become usable. Use the unseal key:
 
 ```shell
 kubectl exec -n security -it security-vault-0 -- vault operator unseal <Unseal-Key>
-kubectl exec -n security -it security-vault-1 -- vault operator unseal <Unseal-Key>
-kubectl exec -n security -it security-vault-2 -- vault operator unseal <Unseal-Key>
 ```
 
 

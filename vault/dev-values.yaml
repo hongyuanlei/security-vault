@@ -2,12 +2,6 @@ vault:
   server:
     ha:
       enabled: true
-      replicas: 3
+      replicas: 1
       raft:
         enabled: true
-
-    # Affinity Settings
-    # Commenting out or setting as empty the affinity variable, will allow
-    # deployment to single node services such as Minikube
-    # This should be either a multi-line string or YAML matching the PodSpec's affinity field.
-    affinity: null
