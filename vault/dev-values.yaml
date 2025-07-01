@@ -1,4 +1,6 @@
 vault:
+  injector:
+    enabled: true
   server:
     ha:
       enabled: true
