@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+name: vault
+description: A custom vault-config-operator chart
+type: application
+version: 0.1.0
+appVersion: "v0.8.33"
+dependencies:
+  - name: vault-config-operator
+    version: v0.8.33
+    repository: "https://redhat-cop.github.io/vault-config-operator"
