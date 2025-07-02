@@ -4,7 +4,7 @@ metadata:
   name: vault-webhook-cert
   namespace: security
 spec:
-  secretName: vault-config-operator-webhook-service-cert
+  secretName: webhook-server-cert
   duration: 8760h # 1 year
   renewBefore: 360h # 15 days before expiry
   subject:
