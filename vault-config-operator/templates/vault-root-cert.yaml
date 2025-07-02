@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vault-root-cert
+  namespace: security
+spec:
+  commonName: vault-root.security.svc.cluster.local
+  secretName: vault-root-cert
+  isCA: true
+  duration: 8760h
+  renewBefore: 360h
+  issuerRef:
+    name: vault-root-issuer
+    kind: Issuer

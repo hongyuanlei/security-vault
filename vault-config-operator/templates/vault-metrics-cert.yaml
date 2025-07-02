@@ -7,13 +7,10 @@ spec:
   secretName: vault-config-operator-certs
   duration: 8760h
   renewBefore: 360h
-  subject:
-    organizations:
-      - vault-config-operator
-#  commonName: vault-config-operator-controller-manager-metrics-service.security.svc
   dnsNames:
-    - vault-config-operator-controller-manager-metrics-service.security.svc
-    - vault-config-operator-controller-manager-metrics-service.security.svc.cluster.local
+    - vault-metrics.security.svc
+    - vault-metrics.security
+    - vault-metrics.security.svc.cluster.local
   issuerRef:
-    name: vault-ca-issuer
-    kind: ClusterIssuer
+    name: vault-metrics-issuer
+    kind: Issuer

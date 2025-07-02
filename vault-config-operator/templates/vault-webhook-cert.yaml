@@ -7,13 +7,10 @@ spec:
   secretName: webhook-server-cert
   duration: 8760h # 1 year
   renewBefore: 360h # 15 days before expiry
-  subject:
-    organizations:
-      - vault-config-operator
-  commonName: vault-config-operator-webhook-service.security.svc
   dnsNames:
-    - vault-config-operator-webhook-service.security.svc
-    - vault-config-operator-webhook-service.security.svc.cluster.local
+    - vault-webhook.security.svc.cluster.local
+    - vault-webhook.security
+    - vault-webhook.security.svc
   issuerRef:
-    name: vault-ca-issuer  # Change to your actual issuer name
-    kind: ClusterIssuer    # Or "Issuer" if using namespace-scoped issuer
+    name: vault-webhook-issuer
+    kind: Issuer
