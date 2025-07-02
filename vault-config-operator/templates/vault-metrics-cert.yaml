@@ -10,7 +10,7 @@ spec:
   subject:
     organizations:
       - vault-config-operator
-  commonName: vault-config-operator-controller-manager-metrics-service.security.svc
+#  commonName: vault-config-operator-controller-manager-metrics-service.security.svc
   dnsNames:
     - vault-config-operator-controller-manager-metrics-service.security.svc
     - vault-config-operator-controller-manager-metrics-service.security.svc.cluster.local
