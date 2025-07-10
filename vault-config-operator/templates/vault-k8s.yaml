@@ -1,0 +1,62 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: AuthEngineMount
+metadata:
+  name: kubernetes
+  namespace: security
+spec:
+  path: kubernetes
+  type: kubernetes
+---
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: KubernetesAuthEngineConfig
+metadata:
+  name: vault-k8s-auth
+  namespace: security
+spec:
+  path: kubernetes
+  kubernetesHost: "https://kubernetes.default.svc"
+  kubernetesCaCert:
+    secretKeyRef:
+      name: kube-root-ca.crt
+      key: ca.crt
+  tokenReviewerJWT:
+    secretKeyRef:
+      name: vault-auth
+      key: token
+#---
+#apiVersion: redhatcop.redhat.io/v1alpha1
+#kind: KubernetesAuthEngineRole
+#metadata:
+#  name: my-kotlin-app-role
+#  namespace: security
+#spec:
+#  path: kubernetes
+#  roleType: "jwt"
+#  boundServiceAccountNames:
+#    - my-kotlin-app
+#  boundServiceAccountNamespaces:
+#    - applications
+#  policies:
+#    - my-kotlin-policy
+#  ttl: 1h
+#---
+#apiVersion: redhatcop.redhat.io/v1alpha1
+#kind: Policy
+#metadata:
+#  name: my-kotlin-app-policy
+#  namespace: security
+#spec:
+#  policy: |
+#    path "secret/data/my-kotlin-app/*" {
+#      capabilities = ["read"]
+#    }
+#---
+#apiVersion: redhatcop.redhat.io/v1alpha1
+#kind: StaticSecret
+#metadata:
+#  name: kotlin-app-secret
+#  namespace: vault-config
+#spec:
+#  path: secret/data/my-kotlin-app/config
+#  data:
+#    DB_PASSWORD: supersecretpassword
