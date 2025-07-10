@@ -8,9 +8,9 @@ spec:
   duration: 8760h # 1 year
   renewBefore: 360h # 15 days before expiry
   dnsNames:
-    - vault-webhook.security.svc.cluster.local
-    - vault-webhook.security
-    - vault-webhook.security.svc
+    - vault-config-operator-webhook-service.security.svc.cluster.local
+    - vault-config-operator-webhook-service.security
+    - vault-config-operator-webhook-service.security.svc
   issuerRef:
     name: vault-webhook-issuer
     kind: Issuer
