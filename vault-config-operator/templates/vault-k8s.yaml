@@ -15,7 +15,7 @@ metadata:
 spec:
   path: kubernetes
   kubernetesHost: "https://kubernetes.default.svc"
-  kubernetesCaCert:
+  kubernetesCACert:
     secretKeyRef:
       name: kube-root-ca.crt
       key: ca.crt
