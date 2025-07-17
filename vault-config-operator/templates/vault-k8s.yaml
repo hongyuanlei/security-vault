@@ -2,7 +2,7 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: AuthEngineMount
 metadata:
   name: kubernetes
-  namespace: security
+  namespace: applications
 spec:
   path: kubernetes
   type: kubernetes
@@ -11,7 +11,7 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: KubernetesAuthEngineConfig
 metadata:
   name: vault-k8s-auth
-  namespace: security
+  namespace: applications
 spec:
   path: kubernetes
   kubernetesHost: "https://kubernetes.default.svc"
@@ -19,7 +19,7 @@ spec:
     secretKeyRef:
       name: kube-root-ca.crt
       key: ca.crt
-  tokenReviewerJWT:
+  tokenReviewerServiceAccount:
     secretKeyRef:
       name: vault-auth
       key: token
